@@ -1,3 +1,7 @@
+/* Global safety */
+* {
+    box-sizing: border-box;
+}
 
 .Task_Manager {
     padding: 10px;
@@ -5,8 +9,17 @@
 
 }
 
-.Task_Manager input {
+.Task_Manager #task_input {
     width: 70%;
+    /* padding: 8px; */
+    min-width: 50%;
+    
+}
+.Adder > :first-child {
+    margin-right: 8px;
+}
+.Task_Manager input {
+    
     padding: 8px;
 }
 
@@ -28,11 +41,17 @@
     width: min-content;
 }
 @media (max-width: 480px) {
-    input {
+    #task_input {
         width: 65%;
     }
 
     button {
         font-size: 18px;
     }
+}
+
+.Task_Manager .Adder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

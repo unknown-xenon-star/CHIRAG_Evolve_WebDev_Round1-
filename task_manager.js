@@ -1,4 +1,4 @@
-
+const dateinput = document.getElementById("dateInput");
 const input = document.getElementById("task_input");
 const button = document.getElementById("Task_add_button");
 const list = document.getElementById("task_list_ul");
