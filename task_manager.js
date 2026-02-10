@@ -9,28 +9,36 @@ list.addEventListener("click", (event) => {
     }
 });
 
+// add Button function
+function ensureDeleteButton(li) {
+    if (li.querySelector(".del-btn")) return;
+    
+    const delBtn = document.createElement("button");
+    delBtn.textContent = "❌";
+    delBtn.className = "del-btn";
+
+    delBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        li.remove();
+    })
+    
+    li.appendChild(delBtn);
+
+}
+
+// add delete button to each li
+document.querySelectorAll("#task_list_ul li").forEach(ensureDeleteButton);
+
 button.addEventListener("click", () => {
     if (input.value === "") return ;
 
     const li = document.createElement("li");
-    // li.textContent = input.value;
+    li.textContent = input.value;
 
     const span = document.createElement("span");
-    const delBtn = document.createElement("button");
-
-    span.textContent = input.value;
-    delBtn.textContent = "❌";
-
-    span.addEventListener("click", () => {
-        span.classList.toggle("done");
-    })
-
-    delBtn.addEventListener("click", () => {
-        li.remove();
-    })
-
-    li.appendChild(span);
-    li.appendChild(delBtn);
+    
+    ensureDeleteButton(li);
+    
     list.appendChild(li);
     input.value = "";
 })
