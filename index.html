@@ -68,6 +68,9 @@
                 max-width: 40%;
 
         }
+        .Moving_handle {
+            padding: 0 5px;
+        }
     </style>
 </head>
 <body>
@@ -132,7 +135,10 @@
             </div>
             <ul id="task_list_ul">
                 <li draggable="true" class="task-item">
-                    <span class="task-item_context">Learn HTML</span>
+                    <div class="task_content">    
+                        <span class="Moving_handle"> : : </span>
+                        <span class="task-item_context">Learn HTML</span>
+                    </div>
                     <div class="NON_TASK_META">
                         <span  class="task-meta">
                             <span class="TASK_Category">Study</span>
@@ -147,7 +153,6 @@
                     </div>
                 </li>
 
-                <li draggable="true" class="task-item"><span>Learn CSS</span></li>
             </ul>
         </div>
         
